@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.freedom</groupId>
+  <artifactId>anotherdaily</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Another_daily</name>
+  <description>
+faces
+</description>
+
+<dependencies>
+ <!-- https://mvnrepository.com/artifact/org.glassfish/jakarta.faces -->
+<dependency>
+    <groupId>org.glassfish</groupId>
+    <artifactId>jakarta.faces</artifactId>
+    <version>4.0.0-M1</version>
+</dependency>
+ <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
+<dependency>
+    <groupId>jakarta.servlet.jsp.jstl</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    <version>2.0.0</version>
+</dependency>
+ <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp/jakarta.servlet.jsp-api -->
+<dependency>
+    <groupId>jakarta.servlet.jsp</groupId>
+    <artifactId>jakarta.servlet.jsp-api</artifactId>
+    <version>3.0.0</version>
+    <scope>provided</scope>
+</dependency>
+ <!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api -->
+<dependency>
+    <groupId>jakarta.platform</groupId>
+    <artifactId>jakarta.jakartaee-api</artifactId>
+    <version>9.1.0</version>
+    <scope>provided</scope>
+</dependency>
+ <!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-web-api -->
+<dependency>
+    <groupId>jakarta.platform</groupId>
+    <artifactId>jakarta.jakartaee-web-api</artifactId>
+    <version>9.1.0</version>
+    <scope>provided</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-impl -->
+<dependency>
+    <groupId>com.sun.faces</groupId>
+    <artifactId>jsf-impl</artifactId>
+    <version>2.2.20</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-api -->
+<dependency>
+    <groupId>com.sun.faces</groupId>
+    <artifactId>jsf-api</artifactId>
+    <version>2.2.20</version>
+</dependency>
+
+
+
+</dependencies>
+
+<build>
+  <plugins>
+  	<plugin>
+    	<groupId>org.apache.tomee.maven</groupId>
+    	<artifactId>tomee-maven-plugin</artifactId>
+    	<version>8.0.5</version>
+    	<configuration>
+    		<tomeeVersion>9.0.0-M3</tomeeVersion>
+			<tomeeArtifactId>apache-tomee</tomeeArtifactId>
+			<tomeeGroupId>org.apache.tomee.jakarta</tomeeGroupId>
+			<tomeeClassifier>plume</tomeeClassifier>
+    	</configuration>
+	</plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.8.1</version>
+      <configuration>
+        <release>11</release>
+      </configuration>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-war-plugin</artifactId>
+      <version>2.3</version>
+      <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+      </configuration>
+    </plugin>
+    <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+    </plugin>
+  </plugins>
+
+</build>
+
+
+</project>
