@@ -6,7 +6,7 @@ pipeline {
     stage("build"){
       steps{
         echo 'building'
-        echo '!!!!sendMailPLzIadde!!!SenderAndLogin!!!'
+        echo '!!!!sendMailPLzIadde!!debug!SenderAndLogin!!!'
 
       }
     }
