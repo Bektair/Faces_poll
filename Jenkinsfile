@@ -6,7 +6,7 @@ pipeline {
     stage("build"){
       steps{
         echo 'building'
-        echo 'pushme'
+        echo 'mavenme'
 
       }
     }
