@@ -1,12 +1,17 @@
 FROM tomee:11-jre-9.0.0-M7-plume
 
-## I want to add DB container, DB UI container, GITHUB container?
+##This is a tomee image bundled with my webapp.war file and my local tomee servers config files
 
-WORKDIR /usr/local/tomee/webapps
+RUN mkdir /home/faces_base
 
-##RUN mkdir anotherdaily
+##Catalina base overrides the config settings of catalina home(default)
 
-COPY ./exportme/anotherdaily.war .
+ENV CATALINA_HOME=/usr/local/tomee
 
+COPY ./server/faces_poll_base /home/faces_base/.
+
+COPY ./anotherdaily/target/*.war /home/faces_base/webapps
+
+ENV CATALINA_BASE=/home/faces_base
 
 CMD ["catalina.sh", "run"]
