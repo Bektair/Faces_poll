@@ -35,7 +35,7 @@ jobs:
         path: ./anotherdaily/target 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-    - run: ls
+    - run: pwd
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
