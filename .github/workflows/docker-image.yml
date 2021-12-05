@@ -21,10 +21,10 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
-      run: mvn --batch-mode --update-snapshots verify
+      run: mvn --batch-mode --update-snapshots -f ./anotherdaily/pom.xml verify
     - name: compile into war-file
       run: mvn compile war:war -f ./anotherdaily/pom.xml
-    - run: mkdir staging && cp target/*.war staging
+    - run: mkdir ./anotherdaily/staging && cp ./anotherdaily/target/*.war ./anotherdaily/staging
     - uses: actions/upload-artifact@v2
       with:
         name: Package
