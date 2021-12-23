@@ -10,12 +10,39 @@ faces
 </description>
 
 <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-console-standalone -->
 	<dependency>
+	    <groupId>org.junit.platform</groupId>
+	    <artifactId>junit-platform-console-standalone</artifactId>
+	    <version>1.8.2</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.4.2</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.4.2</version>
+        <scope>test</scope>
+    </dependency>
+<!-- 	<dependency>
         <groupId>jakarta.servlet</groupId>
         <artifactId>jakarta.servlet-api</artifactId>
         <version>5.0.0</version>
         <scope>provided</scope>
     </dependency>
+    https://mvnrepository.com/artifact/jakarta.enterprise/jakarta.enterprise.cdi-api
+	<dependency>
+	    <groupId>jakarta.enterprise</groupId>
+	    <artifactId>jakarta.enterprise.cdi-api</artifactId>
+	    <version>3.0.0</version>
+	    <scope>provided</scope>
+	</dependency>
+	
     <dependency>
         <groupId>jakarta.servlet.jsp</groupId>
         <artifactId>jakarta.servlet.jsp-api</artifactId>
@@ -28,7 +55,27 @@ faces
         <version>4.0.0</version>
         <scope>provided</scope>
     </dependency>
-    <dependency>
+    https://mvnrepository.com/artifact/jakarta.inject/jakarta.inject-api
+	<dependency>
+	    <groupId>jakarta.inject</groupId>
+	    <artifactId>jakarta.inject-api</artifactId>
+	    <version>2.0.1</version>
+	</dependency>
+    https://mvnrepository.com/artifact/jakarta.interceptor/jakarta.interceptor-api
+	<dependency>
+	    <groupId>jakarta.interceptor</groupId>
+	    <artifactId>jakarta.interceptor-api</artifactId>
+	    <version>2.0.0</version>
+	</dependency> -->
+    <!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api -->
+	<dependency>
+	    <groupId>jakarta.platform</groupId>
+	    <artifactId>jakarta.jakartaee-api</artifactId>
+	    <version>9.1.0</version>
+	    <scope>provided</scope>
+	</dependency>
+    
+<!--     <dependency>
         <groupId>jakarta.websocket</groupId>
         <artifactId>jakarta.websocket-api</artifactId>
         <version>2.0.0</version>
@@ -39,7 +86,24 @@ faces
         <artifactId>jakarta.security.enterprise-api</artifactId>
         <version>2.0.0</version>
         <scope>provided</scope>
-    </dependency>
+    </dependency> -->
+    <!-- https://mvnrepository.com/artifact/org.glassfish/jakarta.faces -->
+	<!-- <dependency>
+	    <groupId>org.glassfish</groupId>
+	    <artifactId>jakarta.faces</artifactId>
+	    <version>3.0.0</version>
+	</dependency> -->
+    
+   	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20090211</version>
+	</dependency>
+	<dependency>
+    	<groupId>com.fasterxml.jackson.datatype</groupId>
+    	<artifactId>jackson-datatype-jsr310</artifactId>
+    	<version>2.9.6</version>
+	</dependency>
 </dependencies>
 
 <build>
@@ -60,7 +124,7 @@ faces
       <artifactId>maven-compiler-plugin</artifactId>
       <version>3.8.1</version>
       <configuration>
-        <release>11</release>
+        <release>16</release>
       </configuration>
     </plugin>
     <plugin>
@@ -75,6 +139,18 @@ faces
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.3</version>
     </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.1</version>
+            <configuration>
+              <properties>
+                <configurationParameters>
+                  junit.platform.output.capture.stderr = true
+                </configurationParameters>
+              </properties>
+            </configuration>
+        </plugin>
   </plugins>
 
 </build>

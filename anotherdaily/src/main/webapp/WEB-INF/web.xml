@@ -11,12 +11,40 @@
     <param-name>jakarta.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
     <param-value>true</param-value>
   </context-param>
+    <context-param>
+    <param-name>CLIENT_SECRET</param-name>
+    <param-value>HuzlC3R0EIbZN-cFhEWuFEt_B_JAm6OY</param-value>
+  </context-param>
+  <context-param>
+    <param-name>CLIENT_ID</param-name>
+    <param-value>868481819593551892</param-value>
+  </context-param>
+  <context-param>
+    <param-name>CLIENT_REDIRECT</param-name>
+    <param-value>https://localhost:8443/Daily_poll/login</param-value>
+  </context-param>
+  <context-param>
+    <param-name>scope</param-name>
+    <param-value>identify</param-value>
+  </context-param>
+  <context-param>
+    <param-name>discord_login_url</param-name>
+    <param-value>https://discord.com/api/oauth2/authorize</param-value>
+  </context-param>
+  <context-param>
+    <param-name>discord_token_url</param-name>
+    <param-value>https://discord.com/api/oauth2/token</param-value>
+  </context-param>
+  <context-param>
+    <param-name>discord_user_info</param-name>
+    <param-value>https://discordapp.com/api/v6/users/@me</param-value>
+  </context-param>
+  
   
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>
   <welcome-file-list>
-    <welcome-file>login.xhtml</welcome-file>
     <welcome-file>index.xhtml</welcome-file>
   </welcome-file-list>
   <error-page>
@@ -34,8 +62,10 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
     </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+    
 </web-app>

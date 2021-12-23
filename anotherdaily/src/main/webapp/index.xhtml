@@ -5,20 +5,42 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-<h:head>
-  <meta charset="ISO-8859-1"/>
-  <title>Insert title here</title>
-</h:head>
-<h:body>
-<h:form>
-  <h:commandButton action="refresh">
-    <f:ajax/>
-  </h:commandButton>
-  <h:outputLabel>Name</h:outputLabel>
-</h:form>
-
-hi
-
-
-</h:body>
+<f:view contracts="#{templateMB.template}">
+	<ui:composition template="/template.xhtml">
+		<ui:define name="title">ChangedTitle</ui:define>
+		<ui:define name="header">
+		  <meta charset="ISO-8859-1"/>
+		  <h:outputStylesheet name="layout.css"></h:outputStylesheet>
+		</ui:define>
+		<ui:define name="content">
+			<h:form>
+			  <h:selectOneMenu valueChangeListener="#{templateMB.tempEvent}"
+			  onchange="submit()">
+			    <f:selectItem itemLabel="#{templateMB.template}" itemDisabled="true"/>
+			    <f:selectItem itemLabel="Protoss" itemValue="protoss"/>
+			    <f:selectItem itemLabel="Terran" itemValue="terran"/>
+			    <f:selectItem itemLabel="Zerg" itemValue="zerg"/>
+			  </h:selectOneMenu>
+			</h:form>
+			<h1>This is 30px for sure</h1>
+			<h:form>
+			  <h:commandButton action="test">
+			    <!-- <f:ajax/> -->
+			  </h:commandButton>
+			  <h:outputLabel>Name: </h:outputLabel>
+			  <h:outputLabel value = "#{lightUser.user_id}"></h:outputLabel>
+			  <h:outputLabel value = "#{loginInfo.discord_nickname}"></h:outputLabel>
+			  <h:outputLabel value = "test"></h:outputLabel>
+			  
+			</h:form> 
+			
+		hi
+		
+		
+		</ui:define>
+		<ui:define name="footer">
+		footlong
+		</ui:define>
+	</ui:composition>
+</f:view>
 </html>

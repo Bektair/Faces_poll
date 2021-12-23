@@ -1,0 +1,27 @@
+package exercises;
+
+public class climbing {
+
+
+	//I want it to use the first known values to add towards the last
+	public static int fibona(int last, int lastlast, int stairs, int count){
+		int current = last+lastlast;
+		count++; //"reduction step(n+1) towards base case"
+		if(count==stairs) return current;  //Base case
+		else return fibona(current, last, stairs, count);	
+  	}
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(fibona(2,1, 1000, 2));
+		
+		
+		//I CLIMB stairccase, n steps needed to each top.
+		//Each time you can climb either 1 or 2 steps
+		//In how many distinct ways can you climb to the top?
+		//Input is total number of steps?
+		//Total number of steps >= 1000.
+	}
+
+}
