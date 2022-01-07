@@ -9,8 +9,7 @@
 	<ui:composition template="/template.xhtml">
 		<ui:define name="title">ChangedTitle</ui:define>
 		<ui:define name="header">
-		  <meta charset="ISO-8859-1"/>
-		  <h:outputStylesheet name="layout.css"></h:outputStylesheet>
+		 testy
 		</ui:define>
 		<ui:define name="content">
 			<h:form>
@@ -25,7 +24,7 @@
 			<h1>This is 30px for sure</h1>
 			<h:form>
 			  <h:commandButton action="test">
-			    <!-- <f:ajax/> -->
+			    <f:ajax/>
 			  </h:commandButton>
 			  <h:outputLabel>Name: </h:outputLabel>
 			  <h:outputLabel value = "#{lightUser.user_id}"></h:outputLabel>

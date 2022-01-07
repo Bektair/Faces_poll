@@ -1,0 +1,44 @@
+@charset "ISO-8859-1";
+
+
+h1{
+	font-size: 30px;
+	color: green;
+	
+}
+
+div#content{
+  position:absolute;
+  left: 5%;
+  width: 95%;
+  height: 95%;
+  top:5%;
+  background-size: cover;
+  background-image: url('../Assets/ttpBannerGrey4.jpg');
+  color: white;
+  font-family: Source Sans Pro,Arial,sans-serif;
+  font-size: 18px;
+}
+
+#factionLogo{
+	height:100%;
+	
+}
+
+div#header{
+  position: absolute;
+  width: 100%;
+  background-size: cover;
+  background-image: url('../Assets/topbar.png');
+  height: 5%;
+  top: 0%;
+  left: 0%;
+}
+
+div#footer{
+	position: absolute;
+	width: 100%;
+	top: 95%;
+	left: 0%;
+}
+

@@ -3,14 +3,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-<head>
+<h:head>
   <title><ui:insert name="title">Default title</ui:insert></title>
-</head>
+  <h:outputStylesheet name="layout.css"></h:outputStylesheet>
+  <meta charset="ISO-8859-1"/>
+</h:head>
 
 <body>
 <ui:debug hotkey="x" rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}"/>
 
 <div id="header">
+    <h:graphicImage url="#{resource['uploadimg.png']}"
+      alt="Duke giving thumbs-up sign" id="factionLogo"/>
     <ui:insert name="header">
     	Header area.  See comments below this line in the source.
     	<!--  include your header file or uncomment the include below and create header.xhtml in this directory -->
@@ -20,8 +24,6 @@
 
 
 <div id="content">
-  <h:graphicImage url="#{resource['logo.png']}"
-    alt="Duke giving thumbs-up sign"/>
   <ui:insert name="content">
     	Content area.  See comments below this line in the source.
     	<!--  include your content file or uncomment the include below and create content.xhtml in this directory -->
